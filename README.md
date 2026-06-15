@@ -25,6 +25,8 @@ Carbon Tracky allows users to log their transport, dietary, and energy habits, i
 
 Eschewing convoluted multi-step forms, Carbon Tracky delivers a true **Unified Single-Page Experience**—an immediate, interactive dashboard that calculates, persists, and intelligently analyzes your carbon data in real-time.
 
+![AEO Score Matrix](./AEO_matrix.png)
+
 ---
 
 ## 📑 Table of Contents
