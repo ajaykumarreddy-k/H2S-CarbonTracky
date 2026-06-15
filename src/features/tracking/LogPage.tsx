@@ -6,6 +6,7 @@ import { useToast } from'../../components/Toast';
 import { EMISSION_FACTORS } from'../../lib/emissionFactors';
 import { QuickAdd } from'./QuickAdd';
 import { useAuthStore } from'../../store/authStore';
+import { useEmissionStore } from'../../store/emissionStore';
 
 const schema = z.object({
   category: z.enum(['Transport','Food','Energy','Shopping','Flights','Other']),

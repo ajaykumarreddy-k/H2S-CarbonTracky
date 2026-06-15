@@ -291,13 +291,10 @@ class TestGeminiService:
             ]
         )
 
-        mock_model = MagicMock()
-        mock_model.generate_content.return_value = mock_response
+        mock_client = MagicMock()
+        mock_client.models.generate_content.return_value = mock_response
 
-        with (
-            patch("app.services.gemini_service.vertexai.init"),
-            patch("app.services.gemini_service.GenerativeModel", return_value=mock_model),
-        ):
+        with patch("app.services.gemini_service.genai.Client", return_value=mock_client):
             res = await gemini_service.generate_insights_gemini(
                 ranked_categories=[], breakdown={}, total_kg=4000.0
             )
@@ -337,13 +334,10 @@ class TestGeminiService:
             + "\n```"
         )
 
-        mock_model = MagicMock()
-        mock_model.generate_content.return_value = mock_response
+        mock_client = MagicMock()
+        mock_client.models.generate_content.return_value = mock_response
 
-        with (
-            patch("app.services.gemini_service.vertexai.init"),
-            patch("app.services.gemini_service.GenerativeModel", return_value=mock_model),
-        ):
+        with patch("app.services.gemini_service.genai.Client", return_value=mock_client):
             res = await gemini_service.generate_insights_gemini(
                 ranked_categories=[], breakdown={}, total_kg=4000.0
             )
@@ -352,13 +346,10 @@ class TestGeminiService:
 
     @pytest.mark.asyncio
     async def test_gemini_generate_insights_generic_error_wraps(self):
-        mock_model = MagicMock()
-        mock_model.generate_content.side_effect = Exception("API limit")
+        mock_client = MagicMock()
+        mock_client.models.generate_content.side_effect = Exception("API limit")
 
-        with (
-            patch("app.services.gemini_service.vertexai.init"),
-            patch("app.services.gemini_service.GenerativeModel", return_value=mock_model),
-        ):
+        with patch("app.services.gemini_service.genai.Client", return_value=mock_client):
             with pytest.raises(GeminiUnavailableError):
                 await gemini_service.generate_insights_gemini(
                     ranked_categories=[], breakdown={}, total_kg=4000.0

@@ -6,18 +6,18 @@ import { useToast } from '../../components/Toast';
 import { useAuthStore } from '../../store/authStore';
 
 const schema = z.object({
-  transport_km_car_petrol: z.number().min(0).default(0),
-  transport_km_car_diesel: z.number().min(0).default(0),
-  transport_km_car_electric: z.number().min(0).default(0),
-  transport_km_bus: z.number().min(0).default(0),
-  transport_km_train: z.number().min(0).default(0),
-  flights_short_haul: z.number().min(0).default(0),
-  flights_long_haul: z.number().min(0).default(0),
-  home_electricity_kwh: z.number().min(0).default(0),
-  home_gas_kwh: z.number().min(0).default(0),
-  household_size: z.number().min(1).default(1),
-  diet_type: z.enum(['meat_heavy', 'meat_medium', 'vegetarian', 'vegan']).default('meat_medium'),
-  consumption_level: z.enum(['low', 'medium', 'high']).default('medium'),
+  transport_km_car_petrol: z.number().min(0),
+  transport_km_car_diesel: z.number().min(0),
+  transport_km_car_electric: z.number().min(0),
+  transport_km_bus: z.number().min(0),
+  transport_km_train: z.number().min(0),
+  flights_short_haul: z.number().min(0),
+  flights_long_haul: z.number().min(0),
+  home_electricity_kwh: z.number().min(0),
+  home_gas_kwh: z.number().min(0),
+  household_size: z.number().min(1),
+  diet_type: z.enum(['meat_heavy', 'meat_medium', 'vegetarian', 'vegan']),
+  consumption_level: z.enum(['low', 'medium', 'high']),
 });
 
 type FormData = z.infer<typeof schema>;
