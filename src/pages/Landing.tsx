@@ -77,6 +77,22 @@ export function Landing() {
         </div>
       </section>
       
+      {/* Why it matters */}
+      <section id="why-it-matters" className="w-full max-w-4xl mx-auto px-4 sm:px-6 py-20 text-center border-t border-gray-100">
+        <h2 className="text-[32px] md:text-[40px] font-medium text-gray-900 mb-6">Why carbon tracking matters</h2>
+        <div className="text-left text-gray-600 space-y-6 text-[16px] leading-relaxed max-w-3xl mx-auto">
+          <p>
+            Climate change is one of the most pressing challenges of our time. According to the <a href="https://www.ipcc.ch/" target="_blank" rel="noopener noreferrer" className="text-[#1a73e8] underline">Intergovernmental Panel on Climate Change (IPCC)</a>, rapid reductions in greenhouse gas emissions are required across all sectors to limit global warming to 1.5°C. Understanding your personal contribution is the foundational step towards meaningful action.
+          </p>
+          <p>
+            Every choice we make—from how we commute to what we eat—has an environmental cost. The <a href="https://www.unep.org/" target="_blank" rel="noopener noreferrer" className="text-[#1a73e8] underline">UN Environment Programme</a> highlights that household consumption accounts for a significant portion of global emissions. By measuring your footprint, you can identify high-impact areas in your daily life.
+          </p>
+          <p>
+            With Carbon Tracky, we make this process intuitive. You can start by completing your <Link to="/onboarding" className="text-[#1a73e8] underline">initial assessment</Link> to get a baseline score. From there, your personalized <Link to="/dashboard" className="text-[#1a73e8] underline">tracking dashboard</Link> provides continuous insights. If you ever need to update your preferences, simply visit your <Link to="/profile" className="text-[#1a73e8] underline">user profile</Link> to adjust your settings. Knowledge is power, and tracking empowers you to be part of the solution.
+          </p>
+        </div>
+      </section>
+
       {/* How it works */}
       <section id="how-it-works" className="w-full max-w-4xl mx-auto px-4 sm:px-6 py-20 text-center border-t border-gray-100">
         <h2 className="text-[32px] md:text-[40px] font-medium text-gray-900 mb-6">How it works</h2>
@@ -131,6 +147,31 @@ export function Landing() {
               <div className="text-4xl font-medium mb-1">8,450t</div>
               <div className="text-[12px] text-blue-100 uppercase tracking-wider">CO₂e Reduced this year</div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section id="faq" className="w-full max-w-4xl mx-auto px-4 sm:px-6 py-20 text-center border-t border-gray-100 mb-10">
+        <h2 className="text-[32px] md:text-[40px] font-medium text-gray-900 mb-10">Frequently Asked Questions</h2>
+        <div className="text-left space-y-8 max-w-3xl mx-auto">
+          <div>
+            <h3 className="text-xl font-medium text-gray-900 mb-2">How accurate is the carbon calculator?</h3>
+            <p className="text-gray-600 text-[15px] leading-relaxed">
+              Our calculator uses up-to-date emission factors provided by global environmental agencies. While it provides an estimate rather than a perfectly exact figure, it is highly accurate for identifying major emission sources in your lifestyle.
+            </p>
+          </div>
+          <div>
+            <h3 className="text-xl font-medium text-gray-900 mb-2">Is my data secure and private?</h3>
+            <p className="text-gray-600 text-[15px] leading-relaxed">
+              Absolutely. We take privacy seriously. Your lifestyle inputs are encrypted and only used to generate your personalized footprint analysis. We never sell your personal data to third parties.
+            </p>
+          </div>
+          <div>
+            <h3 className="text-xl font-medium text-gray-900 mb-2">Do I need to track every single day?</h3>
+            <p className="text-gray-600 text-[15px] leading-relaxed">
+              No, you don't. We recommend updating your footprint whenever you make a significant lifestyle change. However, logging occasional habits in your dashboard helps the AI provide better, more tailored recommendations.
+            </p>
           </div>
         </div>
       </section>

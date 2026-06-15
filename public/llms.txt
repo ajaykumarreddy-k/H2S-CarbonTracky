@@ -1,0 +1,14 @@
+# Carbon Tracky
+
+Carbon Tracky is an open-source, AI-powered carbon footprint tracker. 
+It helps users understand their environmental impact by logging their daily habits related to transport, diet, and energy usage.
+
+## Key Features
+- Quick 90-second carbon footprint calculator.
+- AI-driven personalized actions powered by Google Gemini.
+- Comprehensive tracking of transport, dietary choices, and home energy.
+- Open-source and privacy-focused design.
+
+## Official Links
+- **Website:** https://carbontracky.com
+- **Dashboard:** https://carbontracky.com/dashboard
