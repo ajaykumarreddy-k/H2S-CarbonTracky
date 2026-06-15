@@ -1,0 +1,57 @@
+[project]
+name = "carbon-tracky-backend"
+version = "0.1.0"
+description = "FastAPI backend for Carbon Tracky"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "fastapi>=0.100.0",
+    "uvicorn>=0.23.0",
+    "pydantic>=2.0.0",
+    "pydantic-settings>=2.0.0",
+    "email-validator",
+    "google-cloud-aiplatform",
+    "google-genai",
+    "httpx",
+    "python-multipart",
+    "slowapi",
+    "firebase-admin",
+    "google-cloud-bigquery",
+    "google-cloud-pubsub",
+    "google-cloud-firestore"
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W", "UP", "BLE", "PLC"]
+ignore = []
+
+[tool.ruff.lint.per-file-ignores]
+"app/services/bigquery_service.py" = ["BLE001"]
+"app/services/pubsub_service.py" = ["BLE001"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["app"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+addopts = "-v --tb=short"
+env = [
+  "USE_GEMINI=false",
+  "USE_FIRESTORE=false",
+  "USE_BIGQUERY=false",
+  "USE_PUBSUB=false",
+  "PROJECT_ID=ajay-carbonfootprint"
+]
+
+[tool.coverage.run]
+source = ["app"]
+omit = ["app/main.py", "tests/*"]
+
+[tool.coverage.report]
+fail_under = 80
+show_missing = true

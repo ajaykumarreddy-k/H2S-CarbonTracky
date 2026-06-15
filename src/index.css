@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+@theme {
+  --color-green-50: #e8f0fe;
+  --color-green-100: #8ab4f8;
+  --color-green-200: #1a73e8;
+  --color-green-400: #1a73e8; /* brand primary */
+  --color-green-600: #1967d2;
+  --color-green-800: #174ea6;
+  --color-green-900: #202124;
+
+  --color-teal-50: #e6f4ea;
+  --color-teal-100: #81c995;
+  --color-teal-200: #34a853;
+  --color-teal-600: #1e8e3e;
+  --color-teal-800: #0d652d;
+  --color-teal-900: #0b5324;
+
+  --color-gray-50: #f8f9fa;
+  --color-gray-100: #f1f3f4;
+  --color-gray-200: #e8eaed;
+  --color-gray-400: #dadce0;
+  --color-gray-600: #80868b;
+  --color-gray-800: #5f6368;
+  --color-gray-900: #202124;
+
+  --color-amber-50: #fef7e0;
+  --color-amber-100: #fde293;
+  --color-amber-600: #f9ab00;
+
+  --color-coral-50: #fce8e6;
+  --color-coral-100: #f28b82;
+  --color-coral-200: #ea4335;
+  --color-coral-600: #d93025;
+
+  --color-blue-50: #e8f0fe;
+  --color-blue-100: #aecbfa;
+  --color-blue-600: #1a73e8;
+  --color-blue-800: #174ea6;
+  
+  --color-brand-400: var(--color-green-200);
+  --color-brand-600: var(--color-green-600);
+
+  --color-bg: #ffffff;
+  --color-bg-2: #f8f9fa;
+  --color-bg-3: #f1f3f4;
+
+  --color-text: #202124;
+  --color-text-2: #5f6368;
+  --color-text-3: #80868b;
+
+  --color-border: rgba(60,64,67,0.12);
+  --color-border-2: rgba(60,64,67,0.22);
+
+  --font-sans: 'Google Sans', 'Product Sans', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Google Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(60,64,67,0.3), 0 1px 3px 1px rgba(60,64,67,0.15);
+  --shadow-md: 0 1px 3px 0 rgba(60,64,67,0.3), 0 4px 8px 3px rgba(60,64,67,0.15);
+  --shadow-lg: 0 4px 6px 0 rgba(60,64,67,0.3), 0 8px 12px 6px rgba(60,64,67,0.15);
+}
+
+@layer base {
+  @import url('https://fonts.cdnfonts.com/css/google-sans');
+  @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
+
+  :root {
+    --bg: #ffffff;
+    --bg-2: #f8f9fa;
+    --bg-3: #f1f3f4;
+
+    --text: #202124;
+    --text-2: #5f6368;
+    --text-3: #80868b;
+    
+    --border: rgba(60,64,67,0.12);
+    --border-2: rgba(60,64,67,0.22);
+  }
+
+  body {
+    background-color: var(--bg-3);
+    color: var(--text);
+    font-family: 'Google Sans', 'Product Sans', system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  .text-display {
+    font-size: 32px;
+    font-weight: 500;
+  }
+  .text-h1 { font-size: 24px; font-weight: 500; }
+  .text-h2 { font-size: 18px; font-weight: 500; }
+  .text-h3 { font-size: 15px; font-weight: 500; }
+  .text-body { font-size: 14px; font-weight: 400; }
+  .text-small { font-size: 12px; font-weight: 400; }
+  .text-micro { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; }
+  .text-data { font-size: 28px; font-weight: 500; }
+}
+
+/* Instant Dark Mode using CSS Filters */
+html.dark {
+  filter: invert(1) hue-rotate(180deg);
+  background-color: #111;
+}
+
+/* Re-invert media so images/videos look normal */
+html.dark img,
+html.dark svg,
+html.dark video,
+html.dark .revert-dark {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+/* Tweak some specific borders and shadows if needed when inverted */
+html.dark body {
+  background-color: #ffffff; /* inverted #ffffff becomes blackish, which is what we want! */
+}

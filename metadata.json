@@ -1,0 +1,6 @@
+{
+  "name": "CarbonTrack",
+  "description": "Track your carbon footprint and get personalised reduction insights. Includes gamified streaks and achievements.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
